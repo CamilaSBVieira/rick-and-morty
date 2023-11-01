@@ -1,0 +1,16 @@
+.header {
+    position: relative;
+    background-color: #121238;
+    z-index: -2;
+    padding: 2rem;
+}
+
+.header-title {
+    position: relative;
+    text-align: center;
+    font-family: 'Rick and Morty';
+    font-size: 4.5rem;
+    color: #01afc8;
+    -webkit-text-stroke: .1px #000;
+    text-shadow: 3px 1px 2px #96c942, -3px 1px 2px #96c942, 1px 3px 2px #96c942, 1px -3px 2px #96c942;
+}

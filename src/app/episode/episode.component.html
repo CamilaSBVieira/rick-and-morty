@@ -1,0 +1,19 @@
+<main>
+    <h2 class="main-title">{{episode.episode}}</h2>
+    <article class="detail-episode">
+        <p>{{episode.episode}} - <span class="detail-episode_name">{{episode.name}}</span></p>
+        <p>Air Date: <span>{{episode.air_date}}</span></p>
+        <p>Characters:</p>
+        <div class="detail-episode_characters">
+            <div *ngFor="let char of characters">
+                <a routerLink="/char/{{char.id}}" [state]="char" class="detail-episode_character" [ngClass]="{
+                    'detail-character_alive': char.status === 'Alive',
+                    'detail-character_dead': char.status === 'Dead',
+                    'detail-character_unknown': char.status === 'unknown',
+                }">
+                    <img [src]="char.image" alt="{{char.name}} picture" title="{{char.name}} - {{char.status}}" />
+                </a>
+            </div>
+        </div> 
+    </article>
+</main>

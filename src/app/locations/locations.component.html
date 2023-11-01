@@ -1,0 +1,30 @@
+<main>
+    <h2 class="main-title">Locations</h2>
+    <div class="main-section_info">
+        <p *ngIf="numOfLocations && numOfLocations > 0">There are
+            <span>{{numOfLocations}}</span>
+            locations
+        </p>
+        <span>{{currentPage}} of {{numOfPages}} pages</span>
+    </div>
+    <section class="card-section">
+        <app-card *ngFor="let location of locations" [location]="location"></app-card>
+        <div class="card-section_pagination" *ngIf="locations">
+            <button (click)="handlePrevPageClick()" class="card-section_button card-section_prev-button"
+                [disabled]="currentPage == 1" routerLink="/locations" [queryParams]="{page: currentPage - 1}">
+                Previous
+            </button>
+            <div class="card-section_pagination-pages">
+                <button class="card-section_button" *ngFor="let page of numOfPages | fillArrayPipe" routerLink="/locations"
+                    [queryParams]="{page: page}" (click)="handleChangePage(page)"
+                    [disabled]="currentPage && page === currentPage">
+                    {{page}}
+                </button>
+            </div>
+            <button routerLink="/locations" [queryParams]="{page: currentPage + 1}" (click)="handleNexPageClick()"
+                class="card-section_button card-section_next-button" [disabled]="currentPage == numOfPages">
+                Next
+            </button>
+        </div>
+    </section>
+</main>

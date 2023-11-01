@@ -1,0 +1,60 @@
+.card {
+    position: relative;
+    border-radius: 8px;
+    display: block;
+    width: 15rem;
+    height: 15rem;
+    cursor: pointer;
+    text-decoration: none;
+}
+.card-char {
+    color: #000;
+}
+.card-location {
+    background-color: #000;
+    background-image: url('../../assets/images/locations-cover.jpg');
+    background-position: center;
+    background-size: cover;
+    color: #96c942;
+    padding: 1rem;
+    font-size: 1.25rem;
+    overflow: hidden;
+}
+.card-episode {
+    background-color: #E8E7E3;
+    border: 3px solid #75BCCE;
+    background-image: url('../../assets/images/episodes-cover.png');
+    background-position: center;
+    background-size: 80%;
+    background-repeat: no-repeat;
+    color: #96c942;
+    font-size: 1.5rem;
+}
+.card-location span, .card-episode span {
+    color: #000;
+}
+.card:hover > span {
+    background-color: #121238;
+    color: #E8E7E3;
+}
+.card-episode:hover {
+    border: 2px solid #121238;
+}
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.card span {
+    font-family: 'Pixelify Sans', sans-serif;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #75BCCE;
+    font-size: 1.5rem;
+    display: block;
+    width: 100%;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    padding: .5rem;
+}

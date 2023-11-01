@@ -1,0 +1,19 @@
+.header-menu {
+    background-color: #121238;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.header-menu a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #96c942;
+    text-decoration: none;
+    cursor: pointer;
+}
+.header-menu a:hover {
+    color: #01afc8;
+}

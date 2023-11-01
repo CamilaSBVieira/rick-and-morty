@@ -1,0 +1,24 @@
+<main>
+    <article class="detail-location">
+        <span class="detail-location_name">{{location.name}}</span>
+        <p>Type: <span>{{location.type}}</span></p>
+        <p>Dimension: <span>{{location.dimension}}</span></p>
+        <p>Residents:
+            <span *ngIf="residents === undefined || residents.length < 1">
+                No known residents
+            </span>
+        </p>
+        <div class="detail-location_residents">
+
+            <div *ngFor="let res of residents">
+                <a routerLink="/char/{{res.id}}" [state]="res" class="detail-location_resident" [ngClass]="{
+                        'detail-resident_alive': res.status === 'Alive',
+                        'detail-resident_dead': res.status === 'Dead',
+                        'detail-resident_unknown': res.status === 'unknown',
+                    }">
+                    <img [src]="res.image" alt="{{res.name}} picture" title="{{res.name}} - {{res.status}}" />
+                </a>
+            </div>
+        </div>
+    </article>
+</main>

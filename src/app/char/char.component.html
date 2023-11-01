@@ -1,0 +1,63 @@
+<main>
+    <h2 class="main-title">{{char?.name}}</h2>
+    <section class="detail-section">
+        <article class="detail-section_article">
+            <img [src]="char?.image" alt="{{char?.name}} picture">
+            <div class="detail-section_info">
+                <header>
+                    <span class="details-section_name">{{char?.name}}</span>
+                    <span class="details-status" [ngClass]="{
+                        'details-status_alive': char?.status === 'Alive',
+                        'details-status_dead': char?.status === 'Dead',
+                        'details-status_unknown': char?.status === 'unknown'                    
+                    }" title="Living status">
+                        <{{char?.status}}>
+                    </span>
+                </header>
+                <p>Species: <span>{{char?.species}}</span></p>
+                <p *ngIf="char?.type">Type: <span>{{char?.type}}</span></p>
+                <p>Gender: <span>{{char?.gender}}</span></p>
+                <p>
+                    Origin:
+                    <span *ngIf="char?.origin?.name !== 'unknown'">
+                        <a routerLink="/char/{{char?.id}}/origin" [state]="char" [skipLocationChange]="true">{{char?.origin?.name}}
+                        </a>
+                    </span>
+                    <span *ngIf="char?.origin?.name == 'unknown'">
+                        {{char?.origin?.name}}
+                    </span>
+                </p>
+                <p>
+                    Last seen in:
+                    <span *ngIf="char?.location?.name !== 'unknown'">
+                        <a routerLink="/char/{{char?.id}}/location" [state]="char" [skipLocationChange]="true">
+                            {{char?.location?.name}}
+                        </a>
+                    </span>
+                    <span *ngIf="char?.location?.name == 'unknown'">
+                        {{char?.location?.name}}
+                    </span>
+                </p>
+                <router-outlet></router-outlet>
+            </div>
+
+        </article>
+        <article class="detail-section_episodes">
+            <header>
+                <button class="detail-episodes_button" type="button" (click)="handleShowEpisodes()">Appears In</button>
+            </header>
+            <div *ngIf="showEpisodes">
+                <a *ngFor="let ep of episodes" routerLink="/episode/{{ep.id}}" class="detail-episodes_link">
+                    <strong>{{ep.episode}}</strong>
+                    -
+                    <span>
+                        {{ep.name}}
+                    </span>
+                </a>
+            </div>
+        </article>
+    </section>
+    <!-- <section>
+        <router-outlet></router-outlet>
+    </section> -->
+</main>

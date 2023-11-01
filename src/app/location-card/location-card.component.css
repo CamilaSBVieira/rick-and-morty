@@ -1,0 +1,40 @@
+.card {
+    margin-top: 1rem;
+    display: block;
+    font-size: 1.25rem;
+    color: #96c942;
+    text-decoration: none;
+    border-radius: 8px;
+    padding: 1rem;
+    background-color: #000;
+    box-shadow: inset 2px 0px 3px #eae8e5, inset -2px 0px 5px #eae8e5;
+}
+
+.card span {
+    font-family: 'Pixelify Sans', sans-serif;
+    position: relative;
+}
+.here::after {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    content: '';
+    height: 1.25rem;
+    width: .2rem;
+    display: block;
+    background-color: #96c942;
+    animation: type 1s infinite;
+}
+@keyframes type {
+    0% {
+        visibility: hidden;
+        background-color: #000;
+    }
+    50% {
+        visibility: hidden;
+    }
+    100% {
+        visibility: visible;
+        background-color: #96c942;
+    }
+}

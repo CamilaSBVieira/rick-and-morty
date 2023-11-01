@@ -1,0 +1,48 @@
+.detail-episode {
+    padding: 2rem;
+    margin: 2rem;
+    background-color: #75BCCE;
+    border-radius: 8px;
+    font-size: 1.25rem;
+}
+
+.detail-episode_name {
+    font-weight: bold;
+    font-size: 2.5rem;
+}
+.detail-episode span {
+    font-family: 'Pixelify Sans', sans-serif;
+}
+.detail-episode span:not(.detail-episode_name) {
+    font-size: 1.5rem;
+}
+.detail-episode_characters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    justify-content: flex-start;
+    margin-top: .875rem;
+}
+.detail-episode_character {
+    display: block;
+    line-height: 0;
+    width: 4.5rem;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.detail-episode_character img {
+    width: 100%;
+    height: auto;
+}
+.detail-character_alive {
+    border: 5px solid #96c942;
+    box-shadow: 2px 0px 5px #415422, -2px 0 5px #415422;
+}
+.detail-character_dead {
+    border: 5px solid #c72121;
+    box-shadow: 2px 0px 5px #780a0a, -2px 0 5px #780a0a;
+}
+.detail-character_unknown {
+    border: 5px solid #30212a;
+    box-shadow: 2px 0px 5px #231e21, -2px 0 5px #231e21;
+}

@@ -1,0 +1,113 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: 'Rick and Morty';
+    src: url('./assets/Rick-and-Morty-Font/rick-and-morty.ttf');
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #eae8e5;
+}
+
+body,
+input,
+button,
+textarea {
+    font-family: 'Tilt Neon', sans-serif;
+    font-size: 1rem;
+}
+
+.main-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #01afc8;
+    text-shadow: 1px 1px 1px #000;
+    margin-bottom: 1.5rem;
+}
+
+main {
+    padding: 2rem;
+}
+
+.main-section_info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: .875rem;
+}
+
+.main-section_info p,
+.main-section_info span {
+    font-size: 1.25rem;
+    color: #121238;
+}
+
+.card-section {
+    display: flex;
+    justify-content: flex-start;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.card-section_pagination {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    gap: .5rem;
+    align-items: center;
+    padding: 1rem;
+}
+.card-section_pagination-pages {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: .5rem;
+}
+.card-section_button {
+    padding: 1rem;
+    appearance: none;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 8px;
+}
+.card-section_button:disabled {
+    cursor: not-allowed;
+}
+.card-section_prev-button {
+    background-color: #96c942;
+}
+
+.card-section_prev-button:hover(:not(:disabled)) {
+    background-color: #415422;
+    color: #eae8e5;
+}
+
+.card-section_next-button {
+    background-color: #75BCCE;
+}
+
+.card-section_next-button:hover(:not(:disabled)) {
+    background-color: #01afc8;
+    color: #eae8e5;
+}
+
+::-webkit-scrollbar {
+    width: .875rem;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #01afc8;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #96c942;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #eae8e5;
+}

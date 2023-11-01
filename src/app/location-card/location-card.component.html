@@ -1,0 +1,5 @@
+<a *ngIf="location" class="card" routerLink="/location/{{location.id}}" [state]="location">
+    <p>Name: <span>{{location.name}}</span></p>
+    <p>Type: <span>{{location.type}}</span></p>
+    <p>Dimension: <span class="here">{{location.dimension}}</span></p>
+</a>
