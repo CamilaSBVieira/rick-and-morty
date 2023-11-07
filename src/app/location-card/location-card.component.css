@@ -1,13 +1,16 @@
 .card {
     margin-top: 1rem;
     display: block;
-    font-size: 1.25rem;
-    color: #96c942;
+    font-size: 1.15rem;
+    color: var(--green-600);
     text-decoration: none;
     border-radius: 8px;
     padding: 1rem;
-    background-color: #000;
-    box-shadow: inset 2px 0px 3px #eae8e5, inset -2px 0px 5px #eae8e5;
+    background-color: var(--black);
+    box-shadow: inset 2px 0px 3px var(--gray), inset -2px 0px 5px var(--gray);
+    @media screen and (min-width: 768px) {
+        font-size: 1.25rem;
+    }
 }
 
 .card span {
@@ -16,25 +19,25 @@
 }
 .here::after {
     position: absolute;
-    top: 0;
+    bottom: 0;
     left: 100%;
     content: '';
     height: 1.25rem;
     width: .2rem;
     display: block;
-    background-color: #96c942;
+    background-color: var(--green-600);
     animation: type 1s infinite;
 }
 @keyframes type {
     0% {
         visibility: hidden;
-        background-color: #000;
+        background-color: var(--black);
     }
     50% {
         visibility: hidden;
     }
     100% {
         visibility: visible;
-        background-color: #96c942;
+        background-color: var(--green-600);
     }
 }

@@ -1,20 +1,30 @@
 .detail-episode {
-    padding: 2rem;
-    margin: 2rem;
-    background-color: #75BCCE;
+    padding: 1.5rem;
+    background-color: var(--blue-400);
     border-radius: 8px;
-    font-size: 1.25rem;
+    font-size: 1.15rem;
+    @media screen and (min-width: 768px) {
+        font-size: 1.25rem;
+        padding: 2rem;
+        margin: 2rem;
+    }
 }
 
 .detail-episode_name {
     font-weight: bold;
-    font-size: 2.5rem;
+    font-size: 2rem;
+    @media screen and (min-width: 768px) {
+        font-size: 2.5rem;
+    }
 }
 .detail-episode span {
     font-family: 'Pixelify Sans', sans-serif;
 }
 .detail-episode span:not(.detail-episode_name) {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
+    @media screen and (min-width: 768px) {
+        font-size: 1.5rem;
+    }
 }
 .detail-episode_characters {
     display: flex;
@@ -26,7 +36,7 @@
 .detail-episode_character {
     display: block;
     line-height: 0;
-    width: 4.5rem;
+    width: 5rem;
     border-radius: 8px;
     overflow: hidden;
 }
@@ -35,14 +45,14 @@
     height: auto;
 }
 .detail-character_alive {
-    border: 5px solid #96c942;
-    box-shadow: 2px 0px 5px #415422, -2px 0 5px #415422;
+    border: 5px solid var(--green-600);
+    box-shadow: 2px 0px 5px var(--green-900), -2px 0 5px var(--green-900);
 }
 .detail-character_dead {
-    border: 5px solid #c72121;
-    box-shadow: 2px 0px 5px #780a0a, -2px 0 5px #780a0a;
+    border: 5px solid var(--red-700);
+    box-shadow: 2px 0px 5px var(--red-900), -2px 0 5px var(--red-900);
 }
 .detail-character_unknown {
-    border: 5px solid #30212a;
-    box-shadow: 2px 0px 5px #231e21, -2px 0 5px #231e21;
+    border: 5px solid var(--black-700);
+    box-shadow: 2px 0px 5px var(--black-800), -2px 0 5px var(--black-800);
 }

@@ -1,6 +1,7 @@
 .header-menu {
-    background-color: #121238;
+    background-color: var(--blue-900);
     display: flex;
+    flex-wrap: wrap;
     gap: 1rem;
     align-items: center;
     justify-content: center;
@@ -8,12 +9,15 @@
 }
 
 .header-menu a {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: bold;
-    color: #96c942;
+    color: var(--green-600);
     text-decoration: none;
     cursor: pointer;
+    @media screen and (min-width: 768px) {
+        font-size: 1.5rem;
+    }
 }
 .header-menu a:hover {
-    color: #01afc8;
+    color: var(--blue-600);
 }

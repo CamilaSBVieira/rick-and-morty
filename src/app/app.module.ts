@@ -18,6 +18,10 @@ import { EpisodesComponent } from './episodes/episodes.component';
 import { EpisodeComponent } from './episode/episode.component';
 import { FillArrayPipePipe } from './pipes/fill-array-pipe.pipe';
 import { RouterModule } from '@angular/router';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
+import { faChevronLeft as fasChevronLeft, faChevronRight as fasChevronRight, faBackwardStep as fasBackwardStep, faForwardStep as fasForwardStep } from '@fortawesome/free-solid-svg-icons';
+import { PaginationComponent } from './pagination/pagination.component';
 
 @NgModule({
   declarations: [
@@ -34,15 +38,21 @@ import { RouterModule } from '@angular/router';
     LocationCardComponent,
     EpisodesComponent,
     EpisodeComponent,
-    FillArrayPipePipe
+    FillArrayPipePipe,
+    PaginationComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FontAwesomeModule,
     HttpClientModule
   ],
   exports: [RouterModule],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(library: FaIconLibrary) {
+    library.addIcons(fasChevronLeft, fasChevronRight, fasBackwardStep, fasForwardStep)
+  }
+}

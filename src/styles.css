@@ -4,14 +4,33 @@
     src: url('./assets/Rick-and-Morty-Font/rick-and-morty.ttf');
 }
 
+:root {
+    --green-600: #96c942;
+    --green-900: #415422;
+    --red-700: #c72121;
+    --red-900: #780a0a;
+    --blue-400: #75BCCE;
+    --blue-600: #01afc8;
+    --blue-800: #25255B;
+    --blue-900: #121238;
+    --gray: #eae8e5;
+    --black-700: #30212a;
+    --black-800: #231e21;
+    --black: #000;
+}
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
+*::selection {
+    background-color: var(--green-600);
+}
+
 body {
-    background-color: #eae8e5;
+    background-color: var(--gray);
 }
 
 body,
@@ -24,10 +43,14 @@ textarea {
 
 .main-title {
     text-align: center;
-    font-size: 2.5rem;
-    color: #01afc8;
-    text-shadow: 1px 1px 1px #000;
+    font-size: 2rem;
+    color: var(--blue-600);
+    text-shadow: 1px 1px 1px var(--black);
     margin-bottom: 1.5rem;
+
+    @media screen and (min-width: 768px) {
+        font-size: 2.5rem;
+    }
 }
 
 main {
@@ -42,58 +65,84 @@ main {
 
 .main-section_info p,
 .main-section_info span {
-    font-size: 1.25rem;
-    color: #121238;
+    font-size: 1rem;
+    color: var(--blue-900);
+
+    @media screen and (min-width: 768px) {
+        font-size: 1.25rem;
+    }
 }
 
 .card-section {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     gap: 1rem;
     flex-wrap: wrap;
+
+    @media screen and (min-width: 768px) {
+        justify-items: center;
+        justify-content: space-between;
+    }
 }
 
 .card-section_pagination {
     display: flex;
     width: 100%;
     justify-content: space-between;
-    gap: .5rem;
     align-items: center;
+    gap: .5rem;
     padding: 1rem;
 }
+.card-section_pagination div {
+    display: flex;
+    gap: .5rem;
+}
+
 .card-section_pagination-pages {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: .5rem;
 }
+
 .card-section_button {
-    padding: 1rem;
+    padding: .875rem;
     appearance: none;
     border: none;
     cursor: pointer;
     font-weight: bold;
     border-radius: 8px;
+    @media screen and (min-width: 768px) {
+        padding: 1rem;
+    }
 }
+
+.page-button_hidden {
+    display: none;
+}
+
 .card-section_button:disabled {
     cursor: not-allowed;
 }
+
 .card-section_prev-button {
-    background-color: #96c942;
+    position: relative;
+    background-color: var(--green-600);
 }
 
 .card-section_prev-button:hover(:not(:disabled)) {
-    background-color: #415422;
-    color: #eae8e5;
+    background-color: var(--green-900);
+    color: var(--gray);
 }
 
 .card-section_next-button {
-    background-color: #75BCCE;
+    position: relative;
+    background-color: var(--blue-400);
 }
 
 .card-section_next-button:hover(:not(:disabled)) {
-    background-color: #01afc8;
-    color: #eae8e5;
+    background-color: var(--blue-600);
+    color: var(--gray);
 }
 
 ::-webkit-scrollbar {
@@ -101,13 +150,13 @@ main {
 }
 
 ::-webkit-scrollbar-track {
-    background-color: #01afc8;
+    background-color: var(--blue-600);
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: #96c942;
+    background-color: var(--green-600);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background-color: #eae8e5;
+    background-color: var(--gray);
 }

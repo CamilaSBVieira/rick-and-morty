@@ -1,14 +1,21 @@
 .detail-location {
-    padding: 2rem;
-    margin: 2rem;
+    padding: 1.5rem;
     background-color: #75BCCE;
     border-radius: 8px;
-    font-size: 1.25rem;
+    font-size: 1.15rem;
+    @media screen and (min-width: 768px) {
+        padding: 2rem;
+        font-size: 1.25rem;
+        margin: 2rem;
+    }
 }
 
 .detail-location_name {
     font-weight: bold;
-    font-size: 2.5rem;
+    font-size: 2rem;
+    @media screen and (min-width: 768px) {
+        font-size: 2.5rem;
+    }
 }
 
 .detail-location span {
@@ -16,7 +23,10 @@
 }
 
 .detail-location span:not(.detail-location_name) {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
+    @media screen and (min-width: 768px) {
+        font-size: 1.5rem;
+    }
 }
 
 .detail-location_residents {
@@ -30,7 +40,7 @@
 .detail-location_resident {
     display: block;
     line-height: 0;
-    width: 4.5rem;
+    width: 5rem;
     border-radius: 8px;
     overflow: hidden;
 }

@@ -10,21 +10,34 @@
     <section class="card-section">
         <app-card *ngFor="let char of chars" [char]="char"></app-card>
         <div class="card-section_pagination" *ngIf="chars">
-            <button (click)="handlePrevPageClick()" class="card-section_button card-section_prev-button"
-                [disabled]="currentPage == 1" routerLink="/chars" [queryParams]="{page: currentPage - 1}">
-                Previous
-            </button>
+            <div>
+                <button (click)="handleChangePage(1)" routerLink="/chars" [queryParams]="{page: 1}"
+                    class="card-section_button card-section_prev-button" [disabled]="currentPage == 1">
+                    <fa-icon [icon]="['fas', 'backward-step']"></fa-icon>
+                </button>
+                <button (click)="handlePrevPageClick()" class="card-section_button card-section_prev-button"
+                    [disabled]="currentPage == 1" routerLink="/chars" [queryParams]="{page: currentPage - 1}">
+                    <fa-icon [icon]="['fas', 'chevron-left']"></fa-icon>
+                </button>
+            </div>
             <div class="card-section_pagination-pages">
                 <button class="card-section_button" *ngFor="let page of numOfPages | fillArrayPipe" routerLink="/chars"
-                    [queryParams]="{page: page}" (click)="handleChangePage(page)"
-                    [disabled]="currentPage && page === currentPage">
+                    [queryParams]="{page: page}" (click)="handleChangePage(page)" [ngClass]="{
+                        'page-button_hidden': page !== currentPage + 1 && page !== currentPage && page !== currentPage - 1,
+                    }" [disabled]="currentPage && page === currentPage">
                     {{page}}
                 </button>
             </div>
-            <button routerLink="/chars" [queryParams]="{page: currentPage + 1}" (click)="handleNexPageClick()"
-                class="card-section_button card-section_next-button" [disabled]="currentPage == numOfPages">
-                Next
-            </button>
+            <div>
+                <button routerLink="/chars" [queryParams]="{page: currentPage + 1}" (click)="handleNexPageClick()"
+                    class="card-section_button card-section_next-button" [disabled]="currentPage == numOfPages">
+                    <fa-icon [icon]="['fas', 'chevron-right']"></fa-icon>
+                </button>
+                <button (click)="handleChangePage(numOfPages)" routerLink="/chars" [queryParams]="{page: numOfPages}"
+                    class="card-section_button card-section_next-button" [disabled]="currentPage == numOfPages">
+                    <fa-icon [icon]="['fas', 'forward-step']"></fa-icon>
+                </button>
+            </div>
         </div>
     </section>
 </main>

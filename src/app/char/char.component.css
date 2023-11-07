@@ -1,29 +1,46 @@
 .detail-section {
-    margin: 2rem;
     display: flex;
-    column-gap: 1rem;
-    align-items: flex-start;
+    flex-direction: column;
+    gap: 1rem;
+    @media screen and (min-width: 768px) {
+        margin: 2rem;
+        flex-direction: row;
+        align-items: flex-start;
+    }
 }
 
 .detail-section_article {
-    width: 65%;
-    padding: 2rem;
+    padding: 1.5rem;
     border-radius: 8px;
-    background-color: #75BCCE;
+    background-color: var(--blue-400);
     display: flex;
-    align-items: flex-start;
-    column-gap: 1rem;
+    flex-direction: column;
+    gap: .875rem;
+    @media screen and (min-width: 768px) {
+        padding: 2rem;
+        column-gap: 1rem;
+        width: 65%;
+        flex-direction: row;
+        align-items: flex-start;
+    }
 }
 
 .detail-section_article img {
-    height: 15rem;
+    height: 10rem;
     width: auto;
+    object-fit: contain;
+    @media screen and (min-width: 768px) {
+        height: 15rem;
+    }
 }
 
 .details-section_name {
     font-family: 'Pixelify Sans', sans-serif;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: bold;
+    @media screen and (min-width: 768px) {
+        font-size: 2rem;
+    }
 }
 
 .details-status {
@@ -44,29 +61,29 @@
 }
 
 .details-status_alive {
-    color: #96c942;
-    text-shadow: 0 0 5px black;
+    color: var(--green-600);
+    text-shadow: 0 0 5px var(--black);
 }
 
 .details-status_alive::before {
-    background-color: #96c942;
-    box-shadow: 0 0 5px black;
+    background-color: var(--green-600);
+    box-shadow: 0 0 5px var(--black);
 }
 
 .details-status_dead {
-    color: #c72121;
+    color: var(--red-700);
 }
 
 .details-status_dead::before {
-    background-color: #c72121;
+    background-color: var(--red-700);
 }
 
 .details-status_unknown {
-    color: #30212a;
+    color: var(--black-800);
 }
 
 .details-status_unknown::before {
-    background-color: #30212a;
+    background-color: var(--black-800);
 }
 .detail-section_info {
     width: 100%;
@@ -74,54 +91,73 @@
 
 .detail-section_info header {
     display: flex;
+    flex-direction: column;
     align-items: center;
+    text-align: center;
+    @media screen and (min-width: 768px) {
+        text-align: left;
+        flex-direction: row;
+        justify-content: space-between;
+    }
 }
+
 .detail-section_info p {
-    font-size: 1.25rem;
+    font-size: 1.15rem;
+    @media screen and (min-width: 768px) {
+        font-size: 1.25rem;
+    }
 }
 
 .detail-section_info span:not(.details-section_name) {
     font-family: 'Pixelify Sans', sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
+    @media screen and (min-width: 768px) {
+        font-size: 1.5rem;
+    }
 }
 
 .detail-section_info a {
     text-decoration: none;
-    color: #000;
+    color: var(--black);
     font-weight: bold;
 }
 
 .detail-section_episodes {
-    width: 35%;
+    @media screen and (min-width: 768px) {
+        width: 35%;
+    }
 }
 
 .detail-section_episodes header {
-    background-color: #121238;
+    background-color: var(--blue-900);
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
     padding: 2rem;
 }
 
 .detail-section_episodes div {
-    background-color: #25255B;
+    background-color: var(--blue-800);
     padding: 1rem;
-    max-height: calc(15rem - 1.25rem);
     overflow-y: scroll;
+    max-height: calc(15rem - 1.25rem);
 }
 
 .detail-episodes_link {
-    font-size: 1.25rem;
-    color: #eae8e5;
+    font-size: 1.15rem;
+    color: var(--gray);
     text-decoration: none;
     display: inline-block;
     width: 100%;
+    @media screen and (min-width: 768px) {
+        font-size: 1.25rem;
+    }
 }
 
 .detail-episodes_button {
     background-color: transparent;
     appearance: none;
     border: none;
-    color: #eae8e5;
+    color: var(--gray);
     font-size: 1.25rem;
     line-height: 1;
     position: relative;
@@ -137,7 +173,7 @@
     height: .875rem;
     width: .875rem;
     border-style: solid;
-    border-color: #eae8e5;
+    border-color: var(--gray);
     border-width: 0px 2px 2px 0px;
     transform: rotate(45deg);
 }

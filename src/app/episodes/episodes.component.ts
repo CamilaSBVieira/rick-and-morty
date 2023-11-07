@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Episode } from '../interfaces/episode';
 import { EpisodeService } from '../services/episode.service';
-import { Observable } from 'rxjs'
 import { Router } from '@angular/router';
 
 @Component({

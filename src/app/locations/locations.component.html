@@ -12,18 +12,18 @@
         <div class="card-section_pagination" *ngIf="locations">
             <button (click)="handlePrevPageClick()" class="card-section_button card-section_prev-button"
                 [disabled]="currentPage == 1" routerLink="/locations" [queryParams]="{page: currentPage - 1}">
-                Previous
+                <fa-icon [icon]="['fas', 'chevron-left']"></fa-icon>
             </button>
             <div class="card-section_pagination-pages">
-                <button class="card-section_button" *ngFor="let page of numOfPages | fillArrayPipe" routerLink="/locations"
-                    [queryParams]="{page: page}" (click)="handleChangePage(page)"
+                <button class="card-section_button" *ngFor="let page of numOfPages | fillArrayPipe"
+                    routerLink="/locations" [queryParams]="{page: page}" (click)="handleChangePage(page)"
                     [disabled]="currentPage && page === currentPage">
                     {{page}}
                 </button>
             </div>
             <button routerLink="/locations" [queryParams]="{page: currentPage + 1}" (click)="handleNexPageClick()"
                 class="card-section_button card-section_next-button" [disabled]="currentPage == numOfPages">
-                Next
+                <fa-icon [icon]="['fas', 'chevron-right']"></fa-icon>
             </button>
         </div>
     </section>

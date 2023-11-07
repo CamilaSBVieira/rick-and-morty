@@ -2,43 +2,50 @@
     position: relative;
     border-radius: 8px;
     display: block;
-    width: 15rem;
-    height: 15rem;
+    width: 9rem;
+    height: 9rem;
     cursor: pointer;
     text-decoration: none;
+    @media screen and (min-width: 768px) {
+        width: 15rem;
+        height: 15rem;
+    }
 }
 .card-char {
-    color: #000;
+    color: var(--black);
 }
 .card-location {
-    background-color: #000;
+    background-color: var(--black);
     background-image: url('../../assets/images/locations-cover.jpg');
     background-position: center;
     background-size: cover;
-    color: #96c942;
+    color: var(--green-600);
     padding: 1rem;
-    font-size: 1.25rem;
+    font-size: 1rem;
     overflow: hidden;
+    @media screen and (min-width: 768px) {
+        font-size: 1.25rem;
+    }
 }
 .card-episode {
-    background-color: #E8E7E3;
-    border: 3px solid #75BCCE;
+    background-color: var(--gray);
+    border: 3px solid var(--blue-400);
     background-image: url('../../assets/images/episodes-cover.png');
     background-position: center;
     background-size: 80%;
     background-repeat: no-repeat;
-    color: #96c942;
+    color: var(--green-600);
     font-size: 1.5rem;
 }
 .card-location span, .card-episode span {
-    color: #000;
+    color: var(--black);
 }
 .card:hover > span {
-    background-color: #121238;
-    color: #E8E7E3;
+    background-color: var(--blue-900);
+    color: var(--gray);
 }
 .card-episode:hover {
-    border: 2px solid #121238;
+    border: 2px solid var(--blue-900);
 }
 .card img {
     width: 100%;
@@ -50,11 +57,14 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    background-color: #75BCCE;
-    font-size: 1.5rem;
+    background-color: var(--blue-400);
+    font-size: 1rem;
     display: block;
     width: 100%;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
     padding: .5rem;
+    @media screen and (min-width: 768px) {
+        font-size: 1.5rem;
+    }
 }
