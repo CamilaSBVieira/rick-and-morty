@@ -21,7 +21,6 @@ import { RouterModule } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faChevronLeft as fasChevronLeft, faChevronRight as fasChevronRight, faBackwardStep as fasBackwardStep, faForwardStep as fasForwardStep } from '@fortawesome/free-solid-svg-icons';
-import { PaginationComponent } from './pagination/pagination.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +38,6 @@ import { PaginationComponent } from './pagination/pagination.component';
     EpisodesComponent,
     EpisodeComponent,
     FillArrayPipePipe,
-    PaginationComponent
   ],
   imports: [
     BrowserModule,
